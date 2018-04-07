@@ -11,9 +11,10 @@ import matplotlib.pyplot as plt
 
 os.chdir('c:/users/admin/documents/github/uow/uow_mlf/week 2/')
 
-
-gl.product_key.set_product_key('B6B8-4812-53F1-8F29-26F6-2A42-F48C-488D')
+pk = open('c:/users/admin/documents/github/gl_product_key.txt','r').read()
+gl.product_key.set_product_key(pk)
 gl.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS',4)
+
 sf = gl.SFrame('c:/users/admin/documents/github/uow/uow_mlf/week 2/home_data.gl/')
 sf
 
