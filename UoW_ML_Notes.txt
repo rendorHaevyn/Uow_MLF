@@ -1,0 +1,27 @@
+== INDEX ==
+1. Week 1 - iPython and GraphLab
+2. Week 2 - Linear Regression Modeling
+
+
+== Week 1 - iPython and GraphLab ==
+
+import graphlab as gl
+sf = SFrame('<<inputfile.csv>>')
+sf.head(5)
+sf.show() # create web dashboad for data / models etc
+gl.canvas.set_target('ipynb') # all visualisations will target this notebook
+sf['age'].show(view='Categorical') # print graph of age column
+
+== Week 2 - Linear Regression Modeling ==
+> f(w)x = w0 + w1x
+* function parameterised by features w
+* we assess the cost of a given model by the Residual Sum of Squares (RSS), predicted WRT actual
+* we minimise this cost over all possible w0 and w1
+> adding higher order (quadratic) features still qualifies prediction models as linear regression
+> Overfitting
+* we need to avoid overfitting
+* can do so by creating a training and test data set,and plotting model error on training and test dataset, so model complexity X model error
+* NOTE: should consider validation dataset also
+> Machine learning block model:
+* Data --> Feature Extraction (x) --> ML Model (w^ or θ's) --> Prediction of Response (y^) --> Compare with actual response with a quality metric (goodness of fit metric), such as Error RSS --> update ML algorithm & w^ --> Prediction of Response... << continues >>
+* w^ (θ's) are weights on the features, AKA "regression coefficients"
