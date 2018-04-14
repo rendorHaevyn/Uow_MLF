@@ -1,6 +1,7 @@
 == INDEX ==
 1. Week 1 - iPython and GraphLab
 2. Week 2 - Linear Regression Modeling
+3. Week 3 - Classification Modeling
 
 
 == Week 1 - iPython and GraphLab ==
@@ -11,6 +12,7 @@ sf.head(5)
 sf.show() # create web dashboad for data / models etc
 gl.canvas.set_target('ipynb') # all visualisations will target this notebook
 sf['age'].show(view='Categorical') # print graph of age column
+
 
 == Week 2 - Linear Regression Modeling ==
 > f(w)x = w0 + w1x
@@ -25,3 +27,38 @@ sf['age'].show(view='Categorical') # print graph of age column
 > Machine learning block model:
 * Data --> Feature Extraction (x) --> ML Model (w^ or θ's) --> Prediction of Response (y^) --> Compare with actual response with a quality metric (goodness of fit metric), such as Error RSS --> update ML algorithm & w^ --> Prediction of Response... << continues >>
 * w^ (θ's) are weights on the features, AKA "regression coefficients"
+
+
+== Week 3 - Classification Modeling ==
+> Linear classifiers of sentiment analysis:
+* We can use a linear classifier to learn weights for each word
+* Words assigned "good" or "bad" from a sentence can thus be weighted in order to evaluate a user's feedback
+* We call this a linear classifier because the output is the weighted sum of the inputs
+* Linear decision boundary separates positive and negative predictions
+* For linear classifiers:
+  ** When 2 weights are non-zero, the decision boundary is a line
+  ** When 3 weights are non-zero, the decision boundary is a plane
+  ** When 4+ weights are non-zero, the decision boundary is a hyperplane
+* For more general (non-linear) classifiers, the decision boundary can take on more complex shapes
+
+> Measuring model prediction with accuracy:
+* If there is class imbalance, accuracy alone is not enough
+* eg: If model predicts 90% of emails are spam, yet we know that 90% of emails *are* spam, then while the model "looks" good from an accuracy perspective, it's not providing more insight than simply guessing that every email is spam!
+
+> Confusion matrices:
+* Allow us to plot out false negative and false positive rates
+* Typically work with two classes (binary classification) but can also work with multiclass classification
+
+> Learning Curves:
+* Despite infinite data, the error in predicting a test dataset output will still have error
+* This error is known as bias
+* More complex models are likely to have less bias, however, the require more data to learn
+
+> Machine learning block model for Classification:
+*   Data                        = Text of the restaurant review / sentences-->
+    Feature Extraction (x)      = Word Counts -->
+    ML Model (w^ or θ's)        = Word Weights -->
+    Prediction of Response (y^) = Predicted Sentiment -->
+    Compare with actual response with a quality metric (goodness of fit metric), such as Error RSS -->
+    Update ML algorithm & w^ --> Prediction of Response
+    ... << continues >>
