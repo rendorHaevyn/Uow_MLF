@@ -2,6 +2,8 @@
 1. Week 1 - iPython and GraphLab
 2. Week 2 - Linear Regression Modeling
 3. Week 3 - Classification Modeling
+4. Week 4 - Clustering Analysis
+5. Week 5 - Recommender Systems
 
 
 == Week 1 - iPython and GraphLab ==
@@ -62,3 +64,51 @@ sf['age'].show(view='Categorical') # print graph of age column
     Compare with actual response with a quality metric (goodness of fit metric), such as Error RSS -->
     Update ML algorithm & w^ --> Prediction of Response
     ... << continues >>
+
+
+== Week 4 - Clustering Analysis ==
+> Word count representation:
+> Bag of words model
+* ignores word order
+* count # instances of each word
+> Finding related articles
+* We can build a word instance vector and multiply this across articles to get a similarity score
+* Problem: the score varies with the length of the articles
+* Solution: normalise these input vectors
+
+> We can estimate the importance of words by using a "Term Frequency : Inverse Document Frequency" approach, TF-IDF
+* TF-IDF Word Weight = log( [# Total Documents] / [1 + # Documents Using the Word] )
+** ie: the more documents this word appears in, the closer its weight moves towards 0
+
+> K-nearest neighbour will return similar documents based upon a score related to word features
+> Clustering
+* Unsupervised learning, where we want to discover cluster structure
+* Voronoi Tesselation is a technique to assist with explaining nearest neighbour clusters
+
+> Machine learning block model for Clustering and Similarity:
+*   Data                        = Document ID / Text table -->
+    Feature Extraction (x)      = TF-IDF vector -->
+    ML Model (w^ or θ's)        = Clustering -->
+    Prediction of Response (y^) = Predicted Cluster Label -->
+    Minimise error of distance between cluster centroids and observed values  -->
+    Update ML algorithm & w^ --> Prediction of Response
+    ... << continues >>
+
+
+== Week 5 - Recommender Systems ==
+> Recommender systems have diverse applications, such as re-purposing/targeting drugs to other applications / targets / sites
+> Collaborative filtering:
+* build matrices which overlay product preferences based on other products
+* popular items will drown out other items in recommender systems if not adjusted for, so we adjust for popularity by:
+1. Jaccard Similarity - normalise by dividing,
+        count of co-purchase of Product A **and** Product B / count of purchase of Product A **or** Product B
+    > but, this has limitations
+2. Weighted average - but, this has limitations, ie: cold-start problem - we have no usage history for new products / users
+
+
+
+
+
+
+
+
