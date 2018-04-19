@@ -104,6 +104,15 @@ sf['age'].show(view='Categorical') # print graph of age column
         count of co-purchase of Product A **and** Product B / count of purchase of Product A **or** Product B
     > but, this has limitations
 2. Weighted average - but, this has limitations, ie: cold-start problem - we have no usage history for new products / users
+* we can make movie recommendations simply by element-wise multiplication of user genre preference vectors by movie feature vectors
+> Machine learning block model for Recommender using Matrix Factorisation:
+*   Data                        = User / Produt / Ratings table -->
+    Feature Extraction (x)      = User ID / Product ID / Age / Gender / Description... -->
+    ML Model (w^ or θ's)        = Matrix Factorisation -->
+    Prediction of Response (y^) = Predicted Rating -->
+    Minimise error between actual rating and predictive ratings -->
+    w^ = estimated parameters, inc weights, feature vectors for each user and product  -->
+    ... << continues >>
 
 
 
