@@ -4,7 +4,7 @@
 3. Week 3 - Classification Modeling
 4. Week 4 - Clustering Analysis
 5. Week 5 - Recommender Systems
-
+6. Week 6 - Deep Learning
 
 == Week 1 - iPython and GraphLab ==
 
@@ -115,9 +115,27 @@ sf['age'].show(view='Categorical') # print graph of age column
     ... << continues >>
 
 
-
-
-
-
-
-
+== Week 6 - Deep Learning ==
+> Neural networks (perceptron)
+* A single layer NN / perceptron functions the same as a simple linear classifier
+    ** A bias (constant) node
+    ** Multiple features
+    ** Weights (thetas) for each feature / bias
+    ** Single output with decision boundary defined
+* Image classification with NNs is built around local detectors for points of interest, such as edge detectors
+* Pros:
+    ** learning without hand tuning
+    ** performance gains
+    ** we can use the models trained in one domain as features in building models in another domain
+* Cons:
+    ** lots of data required for high accuracy
+    ** computationally expensive
+    ** hard to tune (architecture, hyperparameters, parameter types, learning algorighm)
+> Machine learning block model for Deep Learning for Image Classification:
+*   Data                        = Images with labels -->
+    Feature Extraction (x)      = "deep features" -->
+    ML Model (w^ or θ's)        = Logistic regression / simple model -->
+    Prediction of Response (y^) = Predicted Labels -->
+    Minimise error of classification accuracy in predicted vs actual -->
+    w^ = estimated weights on features (parameters), change weights, feature vectors for each feature  -->
+    ... << continues >>
